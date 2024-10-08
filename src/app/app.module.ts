@@ -8,19 +8,28 @@ import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './components/home/home.component';
 import { MedicineHomeComponent } from './components/medicine-home/medicine-home.component';
 import { FormsModule } from '@angular/forms';
+import { TopDealsComponent } from './components/top-deals/top-deals.component';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { MedicinesCategoryComponent } from './components/medicines-category/medicines-category.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MedicineHomeComponent
+    MedicineHomeComponent,
+    TopDealsComponent,
+    MedicinesCategoryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CoreModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

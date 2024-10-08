@@ -13,10 +13,27 @@
     <div class="input-group">
         <span class="input-group-text p-3 bg-light city-label">{{city}} {{pincode}} <i class="bi bi-chevron-down ms-4 text-primary cursor fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></span>
         <input type="text" class="form-control p-3" placeholder="Search Medicines" name="search" [(ngModel)]="searchText"
-            >
+          (ngModelChange)="searchProducts()"  >
+                   
         <span class="input-group-text bg-light p-3"> <i class="bi bi-search mx-2 text-primary fw-bold"></i> <a class="mx-2 text-decoration-none">Search</a></span>    
     </div>
+    <ul class="list-group search-box m-auto" *ngIf="medicines.length > 0">
+        <li class="list-group-item cursor" *ngFor="let item of medicines">{{item.name}}</li>
+    </ul> 
 </div>
+
+<div class="container w-75 mt-3"> 
+    <img src="https://www.medibuddy.in/assets/banners/medicine-page.webp" alt="" style="width: 100%;">
+</div>
+
+<div class="container w-75 mt-3">
+    <div class="clearfix mb-2">
+        <div class="float-start fs-5 fw-bold">Top Deals</div>
+        <div class="float-end"><a routerLink="/medicines-by-category" class="fs-5 fw-bold text-decoration-none">View All</a></div>
+    </div>
+<app-top-deals></app-top-deals>
+</div>
+
 
 <div class="modal" tabindex="-1" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
