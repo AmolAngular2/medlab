@@ -8,7 +8,7 @@
                     <h5 class="card-title text-desc fs-6" [title]="product.description">{{product.description}}</h5>
                     <p class="card-text">{{product.type}}</p>
                     <p class="mb-0"><span>MRP&nbsp;</span><span class="text-decoration-line-through">₹{{product.actualPrice}}</span></p>
-                    <p>₹<span class="ms-1 float-start">{{product.discountPrice}}</span> <a class="cursor px-1 border border-2 rounded text-decoration-none float-end cursor" (click)="addToCart(product)">ADD</a></p>
+                    <p>₹<span class="ms-1 float-start">{{product.discountPrice}}</span> <a class="cursor px-1 border border-2 rounded text-decoration-none float-end cursor" (click)="addProductToCart(product)">ADD</a></p>
                 </div>
             </div>
         </ng-template>

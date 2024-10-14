@@ -7,11 +7,13 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './components/home/home.component';
 import { MedicineHomeComponent } from './components/medicine-home/medicine-home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TopDealsComponent } from './components/top-deals/top-deals.component';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { MedicinesCategoryComponent } from './components/medicines-category/medicines-category.component';
+import { CartComponent } from './cart/cart.component';
+import { BookingDetailsComponent } from './cart/booking-details/booking-details.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { MedicinesCategoryComponent } from './components/medicines-category/medi
     HomeComponent,
     MedicineHomeComponent,
     TopDealsComponent,
-    MedicinesCategoryComponent
+    MedicinesCategoryComponent,
+    CartComponent,
+    BookingDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,8 @@ import { MedicinesCategoryComponent } from './components/medicines-category/medi
     SharedModule,
     FormsModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
