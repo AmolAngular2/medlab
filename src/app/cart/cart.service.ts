@@ -52,4 +52,7 @@ export class CartService {
    return this.orderDetails;
   }
 
+  removeItemdFromCart(){
+    localStorage.removeItem("cart");
+  }
 }

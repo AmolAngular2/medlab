@@ -3,6 +3,7 @@ import { CartService } from '../cart.service';
 import { Order } from '../cart.component';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from 'src/app/core/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-booking-details',
@@ -14,7 +15,7 @@ export class BookingDetailsComponent {
    bookingForm!:FormGroup;
 
 
-   constructor(private cart:CartService,private fb:FormBuilder,private api:ApiService){
+   constructor(private cart:CartService,private fb:FormBuilder,private api:ApiService,private router:Router){
       this.orderDetails = this.cart.getOrderDetails();
       console.log("orderDetails",this.orderDetails);
    }
@@ -51,7 +52,9 @@ export class BookingDetailsComponent {
 
     this.api.postDataToServer("order",this.orderDetails).subscribe({
       next:(resp:any)=>{
+         this.cart.removeItemdFromCart();
          alert("You order has been placed successfully");
+         this.router.navigate(["/home"]);
       }
     })
    }
