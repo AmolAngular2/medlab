@@ -27,7 +27,7 @@
                     <h5 class="card-title text-desc fs-6">{{medicineObj.description}}</h5>
                     <p class="card-text">{{medicineObj.type}}</p>
                     <p class="mb-0"><span>MRP&nbsp;</span><span class="text-decoration-line-through">₹{{medicineObj.actualPrice}}</span></p>
-                    <p>₹<span class="ms-1 float-start">{{medicineObj.discountPrice}}</span> <a class="cursor px-1 border border-2 rounded text-decoration-none float-end cursor">ADD</a></p>
+                    <p>₹<span class="ms-1 float-start">{{medicineObj.discountPrice}}</span> <a class="cursor px-1 border border-2 rounded text-decoration-none float-end cursor" (click)="addProductToCart(medicineObj)">ADD</a></p>
                 </div>
               </div> 
         </div>

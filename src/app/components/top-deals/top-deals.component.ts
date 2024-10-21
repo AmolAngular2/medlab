@@ -11,7 +11,6 @@ import { ApiService } from 'src/app/core/api.service';
 export class TopDealsComponent {
 
   topDeals: any = [];
-  cartItems:any=[];
   constructor(private api: ApiService,private cart:CartService) {
 
   }
@@ -58,16 +57,8 @@ export class TopDealsComponent {
   }
 
 
-  addToCart(productObj: any){
-    if(productObj){
-      //lets check if data is available in local storage i
-      //if available then add data to existing cart.
-      this.cartItems = this.cart.getCartDataFromLocalStorage();
-      this.cartItems.push(productObj);
-      let carItemsStr = JSON.stringify(this.cartItems);
-      localStorage.setItem("cart",carItemsStr);
-      this.cart.sendCartCount(this.cartItems.length);
-    }
+  addProductToCart(productObj: any){
+    this.cart.addToCart(productObj);
   }
 
 }

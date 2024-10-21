@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from 'src/app/cart/cart.service';
 import { ApiService } from 'src/app/core/api.service';
 import { UtilityService } from 'src/app/core/utility.service';
 
@@ -11,7 +12,7 @@ export class MedicinesCategoryComponent {
 
   medicinesList:any = [];
   pincodeDetails:any;
-  constructor(private api:ApiService,private utility:UtilityService){
+  constructor(private api:ApiService,private utility:UtilityService,private cart:CartService){
 
   }
 
@@ -32,6 +33,10 @@ export class MedicinesCategoryComponent {
    }
      
    })
+  }
+
+  addProductToCart(productObj:any){
+    this.cart.addToCart(productObj);
   }
 
 }
